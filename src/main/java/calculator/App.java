@@ -59,6 +59,7 @@ public class App {
                 count++;
             }else {
                 System.out.println("추가 불가능");
+                break;
             }
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) : ");
