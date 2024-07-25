@@ -28,7 +28,7 @@ public class App {
             System.out.println("입력한 사칙연산 기호 :" + op);
 
             //Level1_3
-            int result =0;
+            double result =0;
             switch (op){
                 case '+' :
                     result = num1 + num2;
@@ -44,7 +44,7 @@ public class App {
                         System.out.println("나눗셈 연산에서 분모에 0이 입력이 불가능입니다.");
                         continue;
                     } else {
-                        result = num1 / num2;
+                        result = (double)num1 / num2;
                     }
                     break;
                 default:
@@ -57,10 +57,13 @@ public class App {
             if (count < results.length) {
                 results[count] = result;
                 count++;
-            }else {
-                System.out.println("추가 불가능");
-                break;
+            } else {
+                for (int i = 0; i < results.length - 1; i++) {
+                    results[i] = results[i + 1];
+                }
+                results[results.length - 1] = result;
             }
+
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) : ");
             String str = sc.next();
@@ -68,8 +71,6 @@ public class App {
                 System.out.println("종료");
                 break;
             }
-
-
         }
     }
 }
