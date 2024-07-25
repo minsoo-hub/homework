@@ -17,12 +17,11 @@ public class App {
         int num2 = sc.nextInt();
         System.out.println("두번째 숫자 : " + num2);
 
-        System.out.print("사칙연산할 기호를 입력하세요 :");
 
         //Level1_2
-        System.out.println("사칙연산 기호를 입력해주세요 : ");
-        String cal = sc.nextLine();
-
+        System.out.print("사칙연산 기호를 입력해주세요: ");
+        char op = sc.next().charAt(0);
+        System.out.println("입력한 사칙연산 기호 :" + op);
 
 
     }
