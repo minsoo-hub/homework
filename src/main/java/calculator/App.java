@@ -7,7 +7,9 @@ public class App {
     public static void main(String[] args) {
         //Level1_1
         Scanner sc = new Scanner(System.in);
-
+        //배열선언및 생성
+        double[] results = new double[10];
+        int count = 0;
         //Level1_4
         while (true) {
             //1번쨰 숫자 입력 받기
@@ -40,16 +42,24 @@ public class App {
                 case '/' :
                     if (num2 == 0){
                         System.out.println("나눗셈 연산에서 분모에 0이 입력이 불가능입니다.");
+                        continue;
                     } else {
                         result = num1 / num2;
                     }
                     break;
                 default:
                     System.out.println("다시 입력해주세요");
-                    break;
+                    continue;
             }
             // num1과 num2를 op으로 계산한 결과 값 출력
             System.out.println("결과 :" + result);
+            //선언한 배열에 연산결과값을 count변수로 인덱스정해주고 배열에 넣기
+            if (count < results.length) {
+                results[count] = result;
+                count++;
+            }else {
+                System.out.println("추가 불가능");
+            }
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) : ");
             String str = sc.next();
@@ -57,6 +67,7 @@ public class App {
                 System.out.println("종료");
                 break;
             }
+
 
         }
     }
