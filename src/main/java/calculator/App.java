@@ -5,17 +5,25 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
-        Scanner scanner1 = new Scanner(System.in);
+        //Level1_1
+        Scanner sc = new Scanner(System.in);
         //1번쨰 숫자 입력 받기
         System.out.print("첫 번째 숫자를 입력하세요: ");
-        int num1 = scanner1.nextInt();
+        int num1 = sc.nextInt();
         System.out.println("첫번째 숫자 : " + num1);
 
         //2번쨰 숫자 입력 받기
         System.out.print("두 번째 숫자를 입력하세요: ");
-        int num2 = scanner1.nextInt();
+        int num2 = sc.nextInt();
         System.out.println("두번째 숫자 : " + num2);
+
+        System.out.print("사칙연산할 기호를 입력하세요 :");
+
+        //Level1_2
+        System.out.println("사칙연산 기호를 입력해주세요 : ");
+        String cal = sc.nextLine();
+
+
 
     }
 }
-//
