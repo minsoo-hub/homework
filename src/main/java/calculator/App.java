@@ -1,14 +1,14 @@
 package calculator;
 
 import java.util.Scanner;
-
+import java.util.ArrayList
 public class App {
 
     public static void main(String[] args) {
         //Level1_1
         Scanner sc = new Scanner(System.in);
-        //배열선언및 생성
-        double[] results = new double[10];
+        // ArrayList생성
+        ArrayList<Double> results = new ArrayList<>();
         int count = 0;
         //Level1_4
         while (true) {
@@ -54,16 +54,19 @@ public class App {
             // num1과 num2를 op으로 계산한 결과 값 출력
             System.out.println("결과 :" + result);
             //선언한 배열에 연산결과값을 count변수로 인덱스정해주고 배열에 넣기
-            if (count < results.length) {
-                results[count] = result;
-                count++;
-            } else {
-                for (int i = 0; i < results.length - 1; i++) {
-                    results[i] = results[i + 1];
-                }
-                results[results.length - 1] = result;
-            }
 
+            results.add(result);
+
+            System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제): ");
+            String str = sc.next();
+            if (str.equals("remove")) {
+                if (!results.isEmpty()) {
+                    double removedResult = results.remove(0); // 가장 먼저 저장된 결과 삭제
+                    System.out.println("삭제된 결과: " + removedResult);
+                } else {
+                    System.out.println("삭제할 결과가 없습니다.");
+                }
+            }
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) : ");
             String str = sc.next();
